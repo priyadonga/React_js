@@ -6,19 +6,19 @@ import four from "./img/img4.webp";
 
 const Card = () => {
 
-  let name = useRef()
-  let age = useRef()
+  let brand = useRef()
+  let price = useRef()
   const [data, setdata] = useState([
     {
       id: 1,
       brand: "omega",
-      price: "4065",
+      price: "5055",
       img: one
     },
     {
       id: 2,
       brand: "tissot",
-      price: "42000",
+      price: "4200",
       img: two
     },
     {
@@ -36,16 +36,27 @@ const Card = () => {
     {
       id: 5,
       brand: "omega",
-      price: "4065",
+      price: "5055",
       img: one
     },
     {
       id: 6,
       brand: "tissot",
-      price: "42000",
+      price: "4200",
       img: two
     },
   ]);
+
+  let submit =()=>{
+    let user={
+        id:7,
+        brand:brand.current.value,
+        price:price.current.value,
+        img:three
+    } 
+
+    setdata([...data,user])
+}
 
   let deleteData = (id) => {
     console.log(id);
@@ -60,13 +71,26 @@ const Card = () => {
             <img src={val.img} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Brand:- {val.brand}</h5>
-              <p className="card-text">Price:- {val.price}</p>
+              <p className="card-text">Price:- $ {val.price}</p>
               <button className="btn btn-primary" style={{ marginRight: "10px" }}>Add</button>
-              <button onClick={() => deleteData(val.id)} className="btn btn-primary">Delete</button>
-            </div>
+                  <button onClick={() => deleteData(val.id)} className="btn btn-danger">Delete</button>
+                </div>
           </div>
         </div>
       ))}
+        <div className="container" style={{marginBottom:'6rem'}}>
+        <div className="row">
+          <div className="col-md-4">
+            <input type="text" className="form-control" placeholder="Enter Brand" ref={brand} />
+          </div>
+          <div className="col-md-4">
+            <input type="number" className="form-control" placeholder="Enter Price" ref={price} />
+          </div>
+          <div className="col-md-4">
+            <button onClick={submit} className="btn btn-success">Add New Item</button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

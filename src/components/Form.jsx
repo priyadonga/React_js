@@ -23,7 +23,7 @@ const Form = () => {
     };
 
     return (
-        <div style={{ maxWidth: "400px", margin: "0 auto",marginTop:"30px",padding: "20px", border: "1px solid #ccc", borderRadius: "5px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
+        <div style={{ maxWidth: "400px", margin: "0 auto",padding: "20px", border: "1px solid #ccc", borderRadius: "5px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
             <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Enter Your Details</h1>
             <input type="text" placeholder="First Name" style={{ width: "100%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "5px" }} onChange={(e) => setfname(e.target.value)} />
             <input type="text" placeholder="Last Name" style={{ width: "100%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "5px" }} onChange={(e) => setlname(e.target.value)} />
